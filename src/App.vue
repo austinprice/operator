@@ -20,20 +20,23 @@
         },
         data () {
             return {
-                calculations: [{calc: '2+2', order: 1}]
+                calculations: [{calc: '2+2', order: 1}],
+                nextOrder: 2,
             }
         },
         methods: {
             addNewCalculation: function () {
-                const nextOrder = this.calculations.length + 1;
-                
+                this.nextOrder = this.calculations.length + 1;
+
                 this.calculations.push({
                     calc: '',
-                    order: nextOrder
+                    order: this.nextOrder
                 });
-                if (this.calculations.length == nextOrder) {
-                    console.log(document.getElementById('calculation-input-' + nextOrder));
-                }
+                this.$nextTick(function() {
+                    document.getElementById('calculation-input-' + this.nextOrder).focus()
+                });
+
+
             }
         }
     }

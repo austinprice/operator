@@ -1,15 +1,16 @@
 // Text Inputs
 // All styles for creating text inputs
 
-textarea {
-  background: $white;
+input {
+  background: $light;
   border-radius: $border-radius;
   border: $border;
   height: auto;
-  margin: 0.5rem 0;
+  font-family: $body;
+  margin: 0;
   outline: none;
-  padding: 0.5rem;
-  font-size: 1em;
+  padding: 0 3rem 0 0.5rem;
+  font-size: 1rem;
   resize: none;
   width: 100%;
 }

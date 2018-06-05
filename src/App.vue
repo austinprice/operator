@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="type-area">
-      <calculation-row v-for="calc in calculations" v-bind:key="calc.id" :calcString="calc.calc"></calculation-row>
+      <calculation-row v-for="calc in calculations" v-bind:key="calc.order" :calc="calc" :calcString="calc.calc" v-on:add-calculation="addNewCalculation"></calculation-row>
     </div>
   </div>
 </template>
@@ -20,7 +20,20 @@
         },
         data () {
             return {
-                calculations: [{calc: '(4 / 2) + 3', answer: null}, {calc: '2 + 2', answer: null}]
+                calculations: [{calc: '2+2', order: 1}]
+            }
+        },
+        methods: {
+            addNewCalculation: function () {
+                const nextOrder = this.calculations.length + 1;
+                
+                this.calculations.push({
+                    calc: '',
+                    order: nextOrder
+                });
+                if (this.calculations.length == nextOrder) {
+                    console.log(document.getElementById('calculation-input-' + nextOrder));
+                }
             }
         }
     }

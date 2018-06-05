@@ -1,6 +1,10 @@
 <template>
     <div class="calculation-row">
-        <input type="text" v-bind:key="calc" v-model="calcString" autofocus>
+        <input :id="'calculation-input-' + calc.order"
+               type="text"
+               placeholder="Type a calculation..."
+               autofocus v-model="calc.calc"
+               @keyup.enter="$emit('add-calculation')" />
         <span class="answer">= {{answer}}</span>
     </div>
 </template>
@@ -9,12 +13,14 @@
 export default {
     name: 'CalculationRow',
     props: {
-        calculation: Object,
-        calcString: String
+        calcString: String,
+        calc: Object
     },
     computed: {
         answer: function() {
-            return eval(this.calcString)
+            if (eval(this.calc.calc)) {
+                return eval(this.calc.calc);
+            }
         }
     }
 }

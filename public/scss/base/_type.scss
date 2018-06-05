@@ -1,0 +1,54 @@
+// Type
+// All base font and typography styles
+// -------------------------------------------------------------------
+
+
+// Defaults
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-reference;
+  font-style: normal;
+  line-height: $base-line-height;
+}
+
+
+h1 {
+  font-size: 23px;
+  font-weight: $body-reg;
+  line-height: 1.1;
+  margin: 1rem 0 0.5rem;
+}
+
+h2 {
+  font-size: 16px;
+  line-height: 1.1;
+  margin: 1rem 0 0.5rem;
+}
+
+
+p {
+  color: $dark;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  &.light {
+    color: $grey-dark;
+    font-style: italic;
+  }
+  &.small {
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+}
+
+a {
+  color: $primary;
+}
+
+
+label {
+  color: $grey-dark;
+  font-size: 0.9rem;
+  font-weight: 700;
+}

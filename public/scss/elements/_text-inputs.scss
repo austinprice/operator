@@ -1,0 +1,15 @@
+// Text Inputs
+// All styles for creating text inputs
+
+textarea {
+  background: $white;
+  border-radius: $border-radius;
+  border: $border;
+  height: auto;
+  margin: 0.5rem 0;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1em;
+  resize: none;
+  width: 100%;
+}

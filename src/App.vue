@@ -1,28 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="type-area">
+      <calculation-row v-for="calc in calculations" v-bind:key="calc.id" :calcString="calc.calc"></calculation-row>
+    </div>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import 'public/scss/app.scss';
 </style>
+
+<script>
+    import CalculationRow from './components/CalculationRow.vue'
+
+    export default {
+        name: 'app',
+        components: {
+            CalculationRow
+        },
+        data () {
+            return {
+                calculations: [{calc: '(4 / 2) + 3', answer: null}, {calc: '2 + 2', answer: null}]
+            }
+        }
+    }
+</script>

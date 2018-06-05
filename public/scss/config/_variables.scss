@@ -1,0 +1,93 @@
+// Variables
+// All global variables for the app
+// --------------------------------------------------------------------
+
+// Base em reference
+$base-reference: 16px;
+
+// Colors
+// All colors in the app
+// --------------------------------------------------------------------
+
+// Colors
+$primary: #0ACFFF;
+
+// Greyscale
+$white: #ffffff;
+$light: #FAFBFB;
+$grey-light: #D7DEE3;
+$grey-mid: #9CB0C0;
+$grey-dark: #889CAC;
+$dark: #416477;
+$black: #323539;
+
+$inactive: $grey-mid;
+
+//UI Colors
+$red: #F95050;
+$red-dark: #A8144C;
+$red-light: #FA5777;
+$red-highlight: tint($red, 85%);
+$yellow: #FFCE40;
+$yellow-dark: #DCBD32;
+$yellow-light: #FAF084;
+
+
+// --------------------------------------------------------------------
+
+
+// Fonts
+// All base font styles
+// --------------------------------------------------------------------
+
+// Import Google Web Fonts
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono');
+
+// Font Stacks
+$body: 'Fira Mono', 'Lucida Console', Monaco, monospace !default;
+
+// Font Weights
+$body-reg: 400;
+$body-bold: 900;
+
+// Defaults
+$base-font-family: $body;
+$base-font-color: $black;
+$base-font-size: $base-reference;
+$base-line-height: 1.15;
+
+// --------------------------------------------------------------------
+
+
+// Utilities
+// --------------------------------------------------------------------
+
+// Margins
+$margin: 1rem !default;
+$margin-small: $margin / 1.5;
+$margin-big: $margin * 2;
+
+// Padding
+$padding: 1rem !default;
+$padding-small: $padding / 1.5;
+$padding-mid: $padding * 1.5;
+$padding-big: $padding * 2;
+
+// General Settings
+$border: 1px solid $light;
+$border-radius: 2px;
+$box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+$box-shadow-hover: 0px 1px 11px rgba(0,0,0,0.35);
+$box-shadow-hover-light: 0px 1px 9px rgba(0,0,0,0.25);
+$transition: .3s ease-in-out;
+
+// --------------------------------------------------------------------
+
+
+// Breakpoints
+// --------------------------------------------------------------------
+
+$big-break: 75em;
+$mid-break: 58em;
+$small-break: 1024px;
+$xs-break: 767px;

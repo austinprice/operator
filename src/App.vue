@@ -43,8 +43,10 @@
             },
             deleteCalculation: function (calc) {
                 if(calc.order === this.calculations.length) {
-                    this.calculations.pop();
-                    this.nextOrder -= 1;
+                    if (calc.calc.length < 1) {
+                        this.calculations.pop();
+                        this.nextOrder -= 1;
+                    }
                 }
                 this.$nextTick(function() {
                     document.getElementById('calculation-input-' + this.nextOrder).focus()

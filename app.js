@@ -10,6 +10,6 @@ if (process.env.NODE_ENV === 'DEV') {
 }
 
 app.on('ready', () => {
-    let window = new BrowserWindow({width: 800, height: 600, minWidth: 800, maxWidth: 800, titleBarStyle: 'hiddenInset'})
+    let window = new BrowserWindow({width: 600, height: 600, minWidth: 400, maxWidth: 800, titleBarStyle: 'hiddenInset'})
     window.loadURL(url)
 })

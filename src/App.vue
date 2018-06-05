@@ -30,27 +30,32 @@
             }
         },
         methods: {
-            addNewCalculation: function () {
-                this.nextOrder = this.calculations.length + 1;
+            addNewCalculation: function (calc) {
+                const calculationsLength = this.calculations.length;
+                if (this.calculations[calculationsLength - 1].calc.length > 0) {
+                    this.nextOrder = this.calculations.length + 1;
 
-                this.calculations.push({
-                    calc: '',
-                    order: this.nextOrder
-                });
-                this.$nextTick(function() {
-                    document.getElementById('calculation-input-' + this.nextOrder).focus()
-                });
+                    this.calculations.push({
+                        calc: '',
+                        order: this.nextOrder
+                    });
+                    this.$nextTick(function() {
+                        document.getElementById('calculation-input-' + this.nextOrder).focus()
+                    });
+                } else {
+                    document.getElementById('calculation-input-' + this.nextOrder).focus();
+                }
             },
             deleteCalculation: function (calc) {
-                if(calc.order === this.calculations.length) {
+                if(calc.order === this.calculations.length && this.calculations.length > 1) {
                     if (calc.calc.length < 1) {
                         this.calculations.pop();
                         this.nextOrder -= 1;
                     }
+                    this.$nextTick(function() {
+                        document.getElementById('calculation-input-' + this.nextOrder).focus()
+                    });
                 }
-                this.$nextTick(function() {
-                    document.getElementById('calculation-input-' + this.nextOrder).focus()
-                });
             }
         }
     }

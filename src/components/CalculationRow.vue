@@ -4,7 +4,8 @@
                type="text"
                placeholder="Type a calculation..."
                autofocus v-model="calc.calc"
-               @keyup.enter="$emit('add-calculation')" />
+               @keyup.enter="$emit('add-calculation')"
+               @keyup.delete="$emit('delete-calculation', calc)"/>
         <span class="answer">= {{answer}}</span>
     </div>
 </template>

@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <div class="type-area">
-      <calculation-row v-for="calc in calculations" v-bind:key="calc.order" :calc="calc" :calcString="calc.calc" v-on:add-calculation="addNewCalculation"></calculation-row>
+      <calculation-row v-for="calc in calculations"
+                       v-bind:key="calc.order"
+                       :calc="calc"
+                       :calcString="calc.calc"
+                       v-on:add-calculation="addNewCalculation"
+                       v-on:delete-calculation="deleteCalculation"></calculation-row>
     </div>
   </div>
 </template>
@@ -20,7 +25,7 @@
         },
         data () {
             return {
-                calculations: [{calc: '2+2', order: 1}],
+                calculations: [{calc: '', order: 1}],
                 nextOrder: 2,
             }
         },
@@ -35,8 +40,15 @@
                 this.$nextTick(function() {
                     document.getElementById('calculation-input-' + this.nextOrder).focus()
                 });
-
-
+            },
+            deleteCalculation: function (calc) {
+                if(calc.order === this.calculations.length) {
+                    this.calculations.pop();
+                    this.nextOrder -= 1;
+                }
+                this.$nextTick(function() {
+                    document.getElementById('calculation-input-' + this.nextOrder).focus()
+                });
             }
         }
     }

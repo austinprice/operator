@@ -5,4 +5,8 @@
 #app {
   margin-top: 2.35rem;
   padding: 2rem;
+
+  .type-area {
+    -webkit-app-region: no-drag;
+  }
 }

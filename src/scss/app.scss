@@ -5,18 +5,14 @@
 @charset "UTF-8";
 
 // Config
-@import
-'config/variables';
+@import 'config/variables';
 
 // Base
-@import
-'base/base',
+@import 'base/base',
 'base/type';
 
 // Elements
-@import
-'elements/text-inputs';
+@import 'elements/text-inputs';
 
 // Layout
-@import
-'layout/base';
+@import 'layout/base';

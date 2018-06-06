@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss">
-    @import 'public/scss/config/variables';
+    @import 'src/scss/config/variables';
     .calculation-row {
         position: relative;
     }

@@ -12,7 +12,7 @@
 </template>
 
 <style lang="scss">
-  @import 'public/scss/app.scss';
+  @import 'src/scss/app.scss';
 </style>
 
 <script>

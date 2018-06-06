@@ -1,7 +1,7 @@
 {
-  "name": "electron-webpack-quick-start",
-  "version": "0.0.0",
-  "license": "MIT",
+  "name": "Operator",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
@@ -22,6 +22,16 @@
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.8.1"
   },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "resolutions": {
     "webpack-sources": "1.0.1"
   }

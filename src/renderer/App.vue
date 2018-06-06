@@ -30,7 +30,7 @@
             }
         },
         methods: {
-            addNewCalculation: function (calc) {
+            addNewCalculation: function () {
                 const calculationsLength = this.calculations.length;
                 if (this.calculations[calculationsLength - 1].calc.length > 0) {
                     this.nextOrder = this.calculations.length + 1;

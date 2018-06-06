@@ -1,47 +1,28 @@
 {
-  "name": "operator",
-  "version": "0.1.0",
-  "private": true,
+  "name": "electron-webpack-quick-start",
+  "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "dev": "NODE_ENV=DEV vue-cli-service serve & sleep 5 && NODE_ENV=DEV electron app.js"
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist": "yarn compile && electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
   "dependencies": {
-    "electron": "^2.0.2",
-    "vue": "^2.5.16"
+    "source-map-support": "^0.5.5",
+    "vue": "^2.5.16",
+    "vue-loader": "^15.2.4"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
-    "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
-    "@vue/cli-service": "^3.0.0-beta.15",
+    "electron": "2.0.0",
+    "electron-builder": "^20.11.1",
+    "electron-webpack": "^2.0.1",
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.2",
-    "vue-template-compiler": "^2.5.16"
+    "sass-loader": "^7.0.3",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.8.1"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "resolutions": {
+    "webpack-sources": "1.0.1"
+  }
 }

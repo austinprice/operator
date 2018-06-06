@@ -6,7 +6,7 @@
                autofocus v-model="calc.calc"
                @keyup.enter="$emit('add-calculation')"
                @keyup.delete="$emit('delete-calculation', calc)"/>
-        <span class="answer">= {{answer}}</span>
+        <span v-if="answer" class="answer">= {{answer}}</span>
     </div>
 </template>
 

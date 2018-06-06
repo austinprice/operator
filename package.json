@@ -1,15 +1,19 @@
 {
   "name": "Operator",
   "version": "0.1.0",
-  "private": true,
+  "repository": "https://github.com/austinprice/operator",
   "scripts": {
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
+  "build": {
+    "appId": "com.github.austinprice.operator"
+  },
   "dependencies": {
     "source-map-support": "^0.5.5",
+    "update-electron-app": "^1.2.0",
     "vue": "^2.5.16",
     "vue-loader": "^15.2.4"
   },

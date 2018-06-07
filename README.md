@@ -2,14 +2,12 @@
 > A calculator scratchpad for your desktop.
 
 ## Getting Started
-Simply clone down this reposity, install dependencies, and get started on your application.
-
-The use of the [yarn](https://yarnpkg.com/) package manager is **strongly** recommended, as opposed to using `npm`.
+Simply clone down this reposity, install dependencies, and get started.
 
 ```bash
 # install dependencies
 yarn
-or
+# or
 npm install
 ```
 
@@ -18,17 +16,17 @@ npm install
 ```bash
 # run application in development mode
 yarn dev
-or
+# or
 npm run dev
 
 # compile source code and create webpack output
 yarn compile
-or
+# or
 npm run compile
 
 # `yarn compile` & create build with electron-builder
 yarn dist
-or
+# or
 npm run dist
 
 # `yarn compile` & create unpacked build with electron-builder

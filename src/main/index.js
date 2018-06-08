@@ -10,9 +10,6 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow;
 
-// Use autoUpdater to check for updates
-autoUpdater.checkForUpdatesAndNotify();
-
 function createMainWindow() {
   const window = new BrowserWindow({width: 600, height: 600, minWidth: 400, titleBarStyle: 'hiddenInset',
       icon: path.join(__dirname, 'public/assets/icons/mac/icon.icns')
@@ -58,11 +55,14 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   // on macOS it is common to re-create a window even after all windows have been closed
   if (mainWindow === null) {
-    mainWindow = createMainWindow()
+    mainWindow = createMainWindow();
   }
 })
 
 // create main BrowserWindow when electron is ready
 app.on('ready', () => {
-  mainWindow = createMainWindow()
+  mainWindow = createMainWindow();
+  
+  // Use autoUpdater to check for updates
+  autoUpdater.checkForUpdatesAndNotify();
 })

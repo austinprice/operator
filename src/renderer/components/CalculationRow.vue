@@ -21,6 +21,13 @@ export default {
     },
     computed: {
         answer: function() {
+            let calc = this.calc.calc;
+            if (calc.includes('a')) {
+                this.calc.calc.replace('a', '');
+            }
+            if (calc.match(/[a-z]/)) {
+                calc.replace(/[^a-z]/g, '+');
+            }
             if (eval(this.calc.calc)) {
                 return eval(this.calc.calc).toLocaleString({ minimumFractionDigits: 0 });
             }

@@ -22,7 +22,7 @@ export default {
     computed: {
         answer: function() {
             if (eval(this.calc.calc)) {
-                return eval(this.calc.calc);
+                return eval(this.calc.calc).toLocaleString({ minimumFractionDigits: 0 });
             }
         }
     }

@@ -4,6 +4,8 @@
                type="text"
                placeholder="Type a calculation..."
                autofocus v-model="calc.calc"
+               @keyup.up="$emit('switch-focused-row-up', calc)"
+               @keyup.down="$emit('switch-focused-row-down', calc)"
                @keyup.enter="$emit('add-calculation')"
                @keyup.delete="$emit('delete-calculation', calc)"/>
         <span v-if="answer" class="answer">= {{answer}}</span>

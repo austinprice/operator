@@ -5,6 +5,8 @@
                        v-bind:key="calc.order"
                        :calc="calc"
                        :calcString="calc.calc"
+                       v-on:switch-focused-row-up="switchFocusedRowUp"
+                       v-on:switch-focused-row-down="switchFocusedRowDown"
                        v-on:add-calculation="addNewCalculation"
                        v-on:delete-calculation="deleteCalculation"></calculation-row>
     </div>
@@ -55,6 +57,21 @@
                     this.$nextTick(function() {
                         document.getElementById('calculation-input-' + this.nextOrder).focus()
                     });
+                }
+            },
+            switchFocusedRowUp: function (newRow) {
+                const currentOrder = newRow.order;
+                if (currentOrder > 1) {
+                    const newOrder = currentOrder - 1;
+                    document.getElementById('calculation-input-' + newOrder).focus();
+                }
+            },
+            switchFocusedRowDown: function (newRow) {
+                const currentOrder = newRow.order;
+                const totalRows = this.calculations.length;
+                if (currentOrder < totalRows) {
+                    const newOrder = currentOrder + 1;
+                    document.getElementById('calculation-input-' + newOrder).focus();
                 }
             }
         }

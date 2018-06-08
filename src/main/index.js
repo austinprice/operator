@@ -1,13 +1,17 @@
 'use strict'
 
 import { app, BrowserWindow } from 'electron'
+import { autoUpdater } from "electron-updater"
 import * as path from 'path'
 import { format as formatUrl } from 'url'
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
-let mainWindow
+let mainWindow;
+
+// Use autoUpdater to check for updates
+autoUpdater.checkForUpdatesAndNotify();
 
 function createMainWindow() {
   const window = new BrowserWindow({width: 600, height: 600, minWidth: 400, titleBarStyle: 'hiddenInset',

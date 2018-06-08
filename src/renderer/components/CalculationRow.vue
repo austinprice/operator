@@ -31,6 +31,9 @@ export default {
             if (eval(this.calc.calc)) {
                 return eval(this.calc.calc).toLocaleString({ minimumFractionDigits: 0 });
             }
+        },
+        calc: function () {
+            
         }
     }
 }

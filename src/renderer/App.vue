@@ -31,6 +31,20 @@
                 nextOrder: 2,
             }
         },
+
+        watch: {
+            calculations: {
+//                handler: function (val, oldVal) {
+//                  let calc = val[0].calc;
+//                  const calcIndex = val[0].order - 1;
+//                    if (calc.includes('a')) {
+//                        console.log(this.calculations[calcIndex].calc.replace('a', '+'))
+//                        this.calculations[calcIndex].calc.replace('a', '+');
+//                    }
+//                },
+//                deep: true
+            }
+        },
         methods: {
             addNewCalculation: function () {
                 const calculationsLength = this.calculations.length;

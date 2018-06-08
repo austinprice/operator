@@ -1,9 +1,9 @@
 {
   "name": "Operator",
-  "version": "0.2",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/austinprice/operator.git"
+    "url": "git://github.com/austinprice/operator.git"
   },
   "scripts": {
     "dev": "electron-webpack dev",

@@ -10,7 +10,7 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 let mainWindow
 
 function createMainWindow() {
-  const window = new BrowserWindow({width: 600, height: 600, minWidth: 400, maxWidth: 800, titleBarStyle: 'hiddenInset',
+  const window = new BrowserWindow({width: 600, height: 600, minWidth: 400, titleBarStyle: 'hiddenInset',
       icon: path.join(__dirname, 'public/assets/icons/mac/icon.icns')
   })
 

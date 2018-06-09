@@ -1,7 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
-import { autoUpdater } from "electron-updater"
+import { app, BrowserWindow, dialog } from 'electron'
 import * as path from 'path'
 import { format as formatUrl } from 'url'
 
@@ -41,6 +40,8 @@ function createMainWindow() {
     })
   })
 
+    require('update-electron-app')()
+
   return window
 }
 
@@ -62,7 +63,4 @@ app.on('activate', () => {
 // create main BrowserWindow when electron is ready
 app.on('ready', () => {
   mainWindow = createMainWindow();
-  
-  // Use autoUpdater to check for updates
-  autoUpdater.checkForUpdatesAndNotify();
 })

@@ -1,6 +1,6 @@
 {
   "name": "Operator",
-  "version": "0.3.0",
+  "version": "0.2.0",
   "main": "./src/main/index.js",
   "repository": "https://github.com/austinprice/operator",
   "scripts": {
@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "source-map-support": "^0.5.5",
-    "update-electron-app": "^1.2.0",
     "vue": "^2.5.16",
     "vue-loader": "^15.2.4"
   },
@@ -25,11 +24,10 @@
     "electron": "^2.0.2",
     "electron-builder": "^20.15.1",
     "electron-log": "^2.2.14",
-    "electron-prebuilt-compile": "^2.0.2",
-    "electron-updater": "^2.21.10",
     "electron-webpack": "^2.0.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3",
+    "update-electron-app": "^1.2.0",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.12.0"
   },
